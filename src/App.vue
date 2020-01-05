@@ -1,20 +1,25 @@
 <template>
   <div id="app">
-    <RwvHeader />
-    <router-view></router-view>
-    <RwvFooter />
+    <v-select-wrapper v-model="selectedData" :options-data="['a', 'b']" />
   </div>
 </template>
 
 <script>
 import RwvHeader from "@/components/TheHeader";
 import RwvFooter from "@/components/TheFooter";
+import VSelectWrapper from "./components/VSelectWrapper";
 
 export default {
   name: "App",
   components: {
     RwvHeader,
-    RwvFooter
+    RwvFooter,
+    VSelectWrapper
+  },
+  data() {
+    return {
+      selectedData: null
+    };
   }
 };
 </script>
